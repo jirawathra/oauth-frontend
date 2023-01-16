@@ -8,6 +8,13 @@ const routes: Routes = [
   { path: '', redirectTo: AppURL.Login, pathMatch: 'full' },
   { path: AppURL.Login, component: LoginComponent },
   { path: AppURL.Register, component: RegisterComponent },
+  {
+    path: AppURL.Authen,
+    loadChildren: () =>
+      import('./authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
+      ),
+  },
 ];
 
 @NgModule({
