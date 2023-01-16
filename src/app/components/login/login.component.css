@@ -1,0 +1,16 @@
+.material-half-bg .cover {
+  /* background-color: #2BA8F9; */
+  background-color: #2f4f4f;
+}
+
+.material-half-bg {
+  /* background-color: #231C4F; */
+  background-color: #000000;
+}
+
+.login-box {
+  background-color: #cdcdcd;
+  border-radius: 15px;
+  min-height: 420px;
+  margin-bottom: 25px;
+}
