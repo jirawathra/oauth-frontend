@@ -6,15 +6,31 @@
     <h1>bScan System</h1>
   </div>
   <div class="login-box">
-    <form class="login-form" action="index.html">
-      <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>เข้าสู่ระบบ</h3>
+    <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h3 class="login-head">
+        <i class="fa fa-lg fa-fw fa-user"></i>เข้าสู่ระบบ
+      </h3>
       <div class="form-group">
         <label class="control-label">อีเมล์</label>
-        <input class="form-control" type="email" placeholder="ระบุอีเมล์..." />
+        <input
+          (blur)="validateEmail()"
+          formControlName="email"
+          class="form-control"
+          [class.is-invalid]="email?.invalid && email?.touched"
+          type="email"
+          placeholder="ระบุอีเมล์..."
+        />
       </div>
       <div class="form-group">
         <label class="control-label">รหัสผ่าน</label>
-        <input class="form-control" type="password" placeholder="ระบุรหัสผ่าน..." />
+        <input
+          (blur)="validatePassword()"
+          formControlName="password"
+          class="form-control"
+          [class.is-invalid]="password?.invalid && password?.touched"
+          type="password"
+          placeholder="ระบุรหัสผ่าน..."
+        />
       </div>
       <div class="form-group">
         <div class="utility">
@@ -31,7 +47,7 @@
         </div>
       </div>
       <div class="form-group btn-container">
-        <button class="btn btn-primary btn-block">
+        <button [disabled]="!form.valid" class="btn btn-primary btn-block">
           <!-- <i class="fa fa-sign-in fa-lg fa-fw"></i>เข้าสู่ระบบ -->
           <i class="fa-solid fa-right-to-bracket"></i> เข้าสู่ระบบ
         </button>
