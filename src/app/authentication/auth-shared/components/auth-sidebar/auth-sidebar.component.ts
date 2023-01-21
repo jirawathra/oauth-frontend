@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthSidebarInterfaceComponent } from './auth-sidebar.interface';
 
-import { AccountService } from '../../../../app-shared/services/account.service';
+import {
+  AccountService,
+  IUserAccount,
+} from '../../../../app-shared/services/account.service';
 import { AuthenticationService } from '../../../../app-shared/services/authentication.service';
 
 import { AlertService } from '../../../../app-shared/services/alert.service';
@@ -15,7 +18,8 @@ import { catchError, of, throwError } from 'rxjs';
 export class AuthSidebarComponent implements AuthSidebarInterfaceComponent {
   AppURL: any;
   AuthURL: any;
-  userLogin: any = '';
+  // userLogin: any = '';
+  userLogin!: IUserAccount;
 
   constructor(
     private _account: AccountService,
@@ -26,6 +30,14 @@ export class AuthSidebarComponent implements AuthSidebarInterfaceComponent {
   }
 
   private initialLoadUserData() {
+    // define userLogin
+    this.userLogin = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      position: '',
+    };
+
     try {
       this._account
         .getUserLogin(this._authen.getAuthenticated())
@@ -59,7 +71,7 @@ export class AuthSidebarComponent implements AuthSidebarInterfaceComponent {
                 'pastel-danger'
               );
             }
-            console.log(userLogin);
+            // console.log(userLogin);
           },
           error: (err) => {
             console.log(err);

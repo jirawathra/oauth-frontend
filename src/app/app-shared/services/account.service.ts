@@ -25,7 +25,7 @@ export class AccountService {
   }
 
   // get user login section
-  getUserLogin(accessToken: string | null) {
+  getUserLogin(accessToken: string | null): Observable<any> {
     // console.log(accessToken);
     // console.log(environment.apiUrl + this.getUserURL);
     const headers = new HttpHeaders({
@@ -36,21 +36,21 @@ export class AccountService {
   }
 }
 
-// export interface IUserAccount {
-//   id?: any;
-//   firstName?: string;
-//   lastName?: string;
-//   email?: string;
-//   password?: string;
-//   position?: string;
-//   avatar?: string;
-//   roleId?: number;
-//   created?: Date;
-//   updated?: Date;
-// }
+export interface IUserAccount {
+  id?: any;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  position?: string;
+  avatar?: string;
+  roleId?: number;
+  created?: Date;
+  updated?: Date;
+}
 
-// export enum IRoleAccount {
-//   Member,
-//   Employee,
-//   Admin,
-// }
+export enum IRoleAccount {
+  Member,
+  Employee,
+  Admin,
+}

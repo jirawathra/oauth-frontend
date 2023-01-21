@@ -58,7 +58,7 @@ export class LoginComponent implements LoginInterfaceComponent, OnInit {
         )
         .subscribe({
           next: (res) => {
-            console.log(res);
+            // console.log(res);
             this.retrieveData = res;
 
             // set local stoarge
