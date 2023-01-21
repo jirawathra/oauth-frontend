@@ -1,2 +1,5 @@
-export interface AuthSidebarInterface {
+export interface AuthSidebarInterfaceComponent {
+  AppURL: any;
+  AuthURL: any;
+  userLogin: any;
 }

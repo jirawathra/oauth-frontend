@@ -72,7 +72,7 @@ export class LoginComponent implements LoginInterfaceComponent, OnInit {
             // alert notification
             this._alert.notify(
               'fa fa-lg fa-check-circle',
-              'Success',
+              'สำเร็จ',
               this.retrieveData.data.message,
               'pastel-success'
             );

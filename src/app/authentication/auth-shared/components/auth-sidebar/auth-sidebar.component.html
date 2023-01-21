@@ -7,8 +7,10 @@
       alt="User Image"
     />
     <div>
-      <p class="app-sidebar__user-name">JL</p>
-      <p class="app-sidebar__user-designation">Full-Stack Developer</p>
+      <p class="app-sidebar__user-name">
+        {{ userLogin.firstName }} {{ userLogin.lastName }}
+      </p>
+      <p class="app-sidebar__user-designation">{{ userLogin.position }}</p>
     </div>
   </div>
   <ul class="app-menu">
